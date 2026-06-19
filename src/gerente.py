@@ -6,7 +6,7 @@ ARQUIVO_DADOS = "sessoes.txt"
 def ler_inteiro(mensagem):
     while True:
         try:
-            valor = int(input(memnsagem))
+            valor = int(input(mensagem))
             return valor
         except ValueError:
             print("ERROR: Deve digitar um valor inteiro válido.")
@@ -62,25 +62,47 @@ def gerar_relatorio():
             else:
                 contador_fases[fase] = 1
 
-#se o arquivo existir mas estiver vazio...
-if total_sessoes == 0:
-    print("O arquivo está vazio!")
-    return
+    # se o arquivo existir mas estiver vazio...
+    if total_sessoes == 0:
+        print("O arquivo está vazio!")
+        return
 
-media_notas = soma_notas / total_sessoes
+    media_notas = soma_notas / total_sessoes
 
-fase_mais_estudada = None
-maior_quantidade = -1
+    fase_mais_estudada = None
+    maior_quantidade = -1
 
-for fase, quantidade in contador_fases.items():
-    if quantidade > maior_quantidade:
-        maior_quantidade = quantity
-        fase_mais_estudada = fase
+    for fase, quantidade in contador_fases.items():
+        if quantidade > maior_quantidade:
+            maior_quantidade = quantidade
+            fase_mais_estudada = fase
 
-print(f"- Total de sessões: {total_sessoes}")
-print(f"- Total de minutos dedicados: {total_minutos} min")
-print(f"- Média das notas: {media_notas: .2f}")
-print(f"- Fase mais estudada: Fase {fase_mais_estudada} (Estudada {maior_quantidade} vezes)")
+    print(f"- Total de sessões: {total_sessoes}")
+    print(f"- Total de minutos dedicados: {total_minutos} min")
+    print(f"- Média das notas: {media_notas: .2f}")
+    print(f"- Fase mais estudada: Fase {fase_mais_estudada} (Estudada {maior_quantidade} vezes)")
 
+def menu():
+    while True:
+        print("\n____________________________")
+        print("-> GERENTE DE ESTUDOS (v1) <-")
+        print("\n____________________________")
+        print("[1] Registrar Sessão")
+        print("[2] Exibir Relatório")
+        print("[3] Sair")
+        print("\n____________________________")
 
+        opcao = input("Escolha uma opcão: ").strip()
 
+        if opcao == "1":
+            registrar_sessao()
+        elif opcao == "2":
+            gerar_relatorio()
+        elif opcao == "3":
+            print("\nSaindo... Bons estudos e até logo!")
+            break
+        else:
+            print("Opcão inválida. Escolha 1, 2 ou 3")
+
+if __name__ == "__main__":
+    menu()
