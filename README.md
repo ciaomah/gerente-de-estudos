@@ -1,4 +1,4 @@
-[![Python CI](https://github.com/ciaomah/gerente-de-estudos/actions/workflows/ci.yml/badge.svg)](https://github.com/ciaomah/gerente-de-estudos/actions/workflows/ci.yml)
+[![Python CI](https://github.com/mayaracsoares/python-studies/actions/workflows/ci.yml/badge.svg)](https://github.com/mayaracsoares/python-studies/actions/workflows/ci.yml)
 
 # GERENTE DE ESTUDOS (CLI)
 
